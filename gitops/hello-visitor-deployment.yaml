@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-visitor-deployment
+  namespace: staging
+spec:
+  selector:
+    matchLabels:
+      app: hello-visitor
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: hello-visitor
+    spec:
+      containers:
+      - name: hello-visitor
+        image: matwoess/hello-visitor:3ce6877
+        ports:
+        - containerPort: 80
+          name: http-web-svc
