@@ -17,5 +17,5 @@ spec:
       - name: hello-visitor
         image: matwoess/hello-visitor:3ce6877
         ports:
-        - containerPort: 80
+        - containerPort: 8888
           name: http-web-svc
