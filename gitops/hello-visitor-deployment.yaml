@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-visitor-deployment
+  name: hello-visitor-deployment-staging
   namespace: staging
 spec:
   selector:
@@ -23,7 +23,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-visitor-deployment
+  name: hello-visitor-deployment-production
   namespace: production
 spec:
   selector:
