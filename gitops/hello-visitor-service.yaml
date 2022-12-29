@@ -8,8 +8,8 @@ spec:
     app: hello-visitor
   ports:
   - port: 8899
-    protocol: TCP
     targetPort: 8888
+    protocol: TCP
 ---
 apiVersion: v1
 kind: Service
