@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: hello-visitor
+      app: hello-visitor-staging
   replicas: 2
   template:
     metadata:
@@ -23,7 +23,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-visitor-deployment-production
+  name: hello-visitor-deployment
   namespace: production
 spec:
   selector:
