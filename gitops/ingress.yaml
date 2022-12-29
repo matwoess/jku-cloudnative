@@ -8,13 +8,13 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  host: my.nginx.com
-  - http:
+  - host: my.nginx.com
+    http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
             name: nginx-service
-            port:
+            port: 
               number: 80
