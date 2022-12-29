@@ -38,7 +38,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /hello
+      - path: /hello-staging
         pathType: Prefix
         backend:
           service:
