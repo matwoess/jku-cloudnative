@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-visitor-service
+  name: hello-visitor-service-staging
   namespace: staging
 spec:
   selector:

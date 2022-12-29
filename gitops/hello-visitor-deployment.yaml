@@ -19,25 +19,3 @@ spec:
         ports:
         - containerPort: 8888
           name: http-web-svc
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: hello-visitor-deployment
-  namespace: production
-spec:
-  selector:
-    matchLabels:
-      app: hello-visitor
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: hello-visitor
-    spec:
-      containers:
-      - name: hello-visitor
-        image: matwoess/hello-visitor:3ce6877
-        ports:
-        - containerPort: 8888
-          name: http-web-svc
