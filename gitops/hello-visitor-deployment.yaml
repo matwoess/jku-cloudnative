@@ -11,10 +11,10 @@ spec:
   template:
     metadata:
       labels:
-        app: hello-visitor
+        app: hello-visitor-staging
     spec:
       containers:
-      - name: hello-visitor
+      - name: hello-visitor-staging
         image: matwoess/hello-visitor:25d829e
         ports:
         - containerPort: 8888
