@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx
+  name: production-ingress
   namespace: production
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
@@ -19,8 +19,27 @@ spec:
               number: 80
   - http:
       paths:
-      - pathType: Prefix
-        path: "/hello"
+      - path: /hello
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-visitor-service
+            port:
+              number: 8888
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: staging-ingress
+  namespace: staging
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /hello
+        pathType: Prefix
         backend:
           service:
             name: hello-visitor-service
