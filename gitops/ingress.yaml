@@ -17,22 +17,12 @@ spec:
             name: nginx-service
             port:
               number: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: hello-visitor
-  namespace: production
-  annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
-spec:
-  rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
+      - pathType: Prefix
+        path: "/hello"
         backend:
           service:
             name: hello-visitor-service
             port:
-              number: 80
+              number: 8888
