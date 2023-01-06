@@ -25,18 +25,6 @@ spec:
             name: hello-visitor-service
             port:
               number: 8888
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: staging-ingress
-  namespace: staging
-  annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
-spec:
-  rules:
-  - http:
-      paths:
       - path: /hello-staging
         pathType: Prefix
         backend:
