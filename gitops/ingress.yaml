@@ -32,6 +32,9 @@ metadata:
   namespace: staging
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.global-static-ip-name: jku-cloudnative
+    networking.gke.io/managed-certificates: managed-cert
+    kubernetes.io/ingress.class: "gce"
 spec:
   rules:
   - http:
