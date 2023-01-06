@@ -8,7 +8,6 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: jku-cloudnative
     networking.gke.io/managed-certificates: managed-cert
     kubernetes.io/ingress.class: "gce"
-    ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   defaultBackend:
     service:
@@ -25,11 +24,22 @@ spec:
             name: hello-visitor-service
             port:
               number: 8888
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: staging-ingress
+  namespace: staging
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
       - path: /hello-staging
         pathType: Prefix
         backend:
           service:
             name: hello-visitor-service
-            namespace: staging
             port:
               number: 8888
