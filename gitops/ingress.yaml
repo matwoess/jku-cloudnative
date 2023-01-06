@@ -29,6 +29,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: hello-visitor-service
+            name: hello-visitor-service.staging
             port:
               number: 8888
